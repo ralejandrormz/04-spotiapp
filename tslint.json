@@ -78,7 +78,7 @@
     "max-file-line-count": [true, 1500],
     "max-line-length": [
       true,
-      140
+      300
     ],
     "member-access": [
       true,
@@ -104,7 +104,6 @@
     ],
     "no-console": [
       true,
-      "log",
       "debug",
       "info",
       "time",
@@ -128,7 +127,7 @@
     "no-eval": true,
     "no-floating-promises": true,
     "no-for-in-array": true,
-    "no-implicit-dependencies": true,
+    "no-implicit-dependencies": false,
     "no-import-side-effect": [
       true,
       {
@@ -147,7 +146,7 @@
     "no-non-null-assertion": true,
     "no-null-keyword": true,
     "no-object-literal-type-assertion": true,
-    "no-parameter-reassignment": true,
+    "no-parameter-reassig<nment": true,
     "no-redundant-jsdoc": true,
     "no-reference": true,
     "no-require-imports": true,
@@ -159,8 +158,9 @@
       }
     ],
     "no-sparse-arrays": true,
-    "no-string-literal": true,
+    "no-string-literal": false,
     "no-string-throw": true,
+    "no-submodule-imports": false,
     "no-switch-case-fall-through": true,
     "no-trailing-whitespace": true,
     "no-this-assignment": true,
