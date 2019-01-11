@@ -1,5 +1,5 @@
-import { Component } from "@angular/core";
-import { SpotifyService } from "src/app/services/spotify.service";
+import { Component } from '@angular/core';
+import { SpotifyService } from 'src/app/services/spotify.service';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +8,14 @@ import { SpotifyService } from "src/app/services/spotify.service";
 })
 export class HomeComponent {
   newReleases: Array<any> = [];
-
+  loading: boolean;
   constructor(private spotify: SpotifyService) {
+    this.loading = true;
     this.spotify.getNewReleases()
-    .subscribe((data: any) => {
-      console.log(data);
-      this.newReleases = data;
-    });
+                .subscribe((data: any) => {
+                  console.log(data);
+                  this.newReleases = data;
+                  this.loading = false;
+                });
   }
 }

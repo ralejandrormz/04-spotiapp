@@ -11,6 +11,7 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { ArtistComponent } from './components/artist/artist.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
 
 // Routes
 import { ROUTES } from './app.routes';
@@ -20,7 +21,6 @@ import { SpotifyService } from './services/spotify.service';
 import { NoimagePipe } from './pipes/noimage.pipe';
 import { CardsComponent } from './components/cards/cards.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,12 +29,13 @@ import { CardsComponent } from './components/cards/cards.component';
     ArtistComponent,
     NavbarComponent,
     NoimagePipe,
-    CardsComponent
+    CardsComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot( ROUTES, { useHash : true })
+    RouterModule.forRoot(ROUTES, { useHash : true })
   ],
   providers: [
     SpotifyService
