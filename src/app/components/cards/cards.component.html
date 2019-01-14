@@ -1,7 +1,7 @@
 <div class="card-columns m-5 animated fadeIn" >
     
-  <div class="card" *ngFor="let item of items; let i = index">
-    <img [src]="item.images | noimage" class="card-img-top" alt="...">
+  <div (click)="viewArtist(item)" class="card" *ngFor="let item of items; let i = index">
+    <img [src]="item.images | noimage" class="card-img-top puntero" alt="...">
     <div class="card-body">
       <h5 class="card-title">{{ item.name }}</h5>
       <p class="card-text">
