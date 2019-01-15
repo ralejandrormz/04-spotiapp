@@ -17,6 +17,10 @@ export class HomeComponent {
                   console.log(data);
                   this.newReleases = data;
                   this.loading = false;
+                }, (err: any) => {
+                  this.error = true;
+                  this.loading = false;
+                  console.log(err);
                 });
   }
 }
