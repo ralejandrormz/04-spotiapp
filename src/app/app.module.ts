@@ -1,40 +1,45 @@
 // Modules
 
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
-// Components
-import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
-import { SearchComponent } from './components/search/search.component';
-import { ArtistComponent } from './components/artist/artist.component';
-import { NavbarComponent } from './components/shared/navbar/navbar.component';
+// Pipes
+import { DomseguroPipe } from './pipes/domseguro.pipe';
+import { NoimagePipe } from './pipes/noimage.pipe';
 
 // Routes
 import { ROUTES } from './app.routes';
 
 // Services
 import { SpotifyService } from './services/spotify.service';
-import { NoimagePipe } from './pipes/noimage.pipe';
-import { CardsComponent } from './components/cards/cards.component';
 
+// Components
+import { AppComponent } from './app.component';
+import { ArtistComponent } from './components/artist/artist.component';
+import { CardsComponent } from './components/cards/cards.component';
+import { HomeComponent } from './components/home/home.component';
+import { SearchComponent } from './components/search/search.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
 
 @NgModule({
   declarations: [
+    NoimagePipe,
+    DomseguroPipe,
     AppComponent,
     HomeComponent,
     SearchComponent,
     ArtistComponent,
     NavbarComponent,
-    NoimagePipe,
-    CardsComponent
+    CardsComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot( ROUTES, { useHash : true })
+    RouterModule.forRoot(ROUTES, { useHash : true })
   ],
   providers: [
     SpotifyService
